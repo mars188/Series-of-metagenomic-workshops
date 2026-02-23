@@ -5,7 +5,7 @@ Participants are expected to have some basic knowledge of metagenome/microbiome 
 
 Although the material and the methods are designed to cater for the NYU Abu Dhabi High Performance Computing environment, it is possible to run this workshop on any other system provided that the neccessary software is installed, and the data is uploaded to that environment. It will also be neccessary to change the input and output directories/files to accomodate such an environment.
 
-## Connecting to the HPC using a MAC machine ##
+### Connecting to the HPC using a MAC machine ###
 * Open the "Terminal" app and type ssh NetID@jubail.abudhabi.nyu.edu
 * Enter your NYU password when prompted and hit enter
 * Once logged in, navigate to your personal "SCRATCH" directory or the any other subdirecotry where you want to run this workshop
