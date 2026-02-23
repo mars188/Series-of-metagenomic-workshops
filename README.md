@@ -17,6 +17,7 @@ Although the material and the methods are designed to cater for the NYU Abu Dhab
 
 # MODULE 1 #
 ### Dataset ###
+The data that we will use for this hands-on training was obtained from public repository published by Jeilu et al. 2025 [https://doi.org/10.1186/s40168-025-02276-7] 
 We will be using the NYUAD High Performance Computing (HPC) cluster for this workshop, however, you can certainly run all of the analysis on any stand alone machine (server, personal laptop/Desktop etc.) provided that you have pre-installed the necessay software packages.
 
 ```
