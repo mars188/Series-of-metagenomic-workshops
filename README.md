@@ -1,6 +1,4 @@
 # Series of Metagenomics Workshop
-This page describes the metagenoic concepts and steps to perform the hands-on workshop on Metagenomics data analysis. 
-
 During this course, participants will learn about the concepts and steps involved in analyzing the metagenomic data obtained from short read high throughput sequencing.
 
 Participants are expected to have some basic knowledge of metagenome/microbiome as well as some biological knowledge on the subject matter.
