@@ -16,6 +16,7 @@ Although the material and the methods are designed to cater for the NYU Abu Dhab
 * Once logged in, navigate to your personal "SCRATCH" directory or the any other subdirecotry where you want to run this workshop.
 
 # MODULE 1 #
+### Dataset ###
 We will be using the NYUAD High Performance Computing (HPC) cluster for this workshop, however, you can certainly run all of the analysis on any stand alone machine (server, personal laptop/Desktop etc.) provided that you have pre-installed the necessay software packages.
 
 ```
