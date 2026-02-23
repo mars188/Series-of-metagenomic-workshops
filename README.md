@@ -15,16 +15,15 @@ Although the material and the methods are designed to cater for the NYU Abu Dhab
 * Enter your NetId, and your password when prompted.
 * Once logged in, navigate to your personal "SCRATCH" directory or the any other subdirecotry where you want to run this workshop.
 
-# Setting up the environment and copying the data #
+# MODULE 1 #
 We will be using the NYUAD High Performance Computing (HPC) cluster for this workshop, however, you can certainly run all of the analysis on any stand alone machine (server, personal laptop/Desktop etc.) provided that you have pre-installed the necessay software packages.
 
 ```
-mkdir -p /scratch/$USER/metagenomics_workshop
-mkdir -p /scratch/$USER/metagenomics_workshop/hands-on
-mkdir -p /scratch/$USER/metagenomics_workshop/hands-on/clean_reads
-cd /scratch/$USER/metagenomics_workshop/hands-on
+mkdir -p /scratch/$USER/metagenomics_workshop/
+mkdir -p /scratch/$USER/metagenomics_workshop/raw_fastqs/
+cd /scratch/$USER/metagenomics_workshop/
+cp /scratch/gencore/ma5877/metagenomic_course/raw_fastqs/* raw_fastqs/
 
-# Series-of-metagenomic-workshops
 ```
 module load all gencore/3
 module load R/4.3.1
