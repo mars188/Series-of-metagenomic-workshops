@@ -10,7 +10,7 @@ Although the material and the methods are designed to cater for the NYU Abu Dhab
 * Enter your NYU password when prompted and hit enter
 * Once logged in, navigate to your personal "SCRATCH" directory or the any other subdirecotry where you want to run this workshop
 
-## Connecting to the HPC using a Windows machine ##
+### Connecting to the HPC using a Windows machine ###
 * Open the "Putty" app, and fill out the fields as follows Host name jubail.abudhabi.nyu.edu, Port=22, and then click on "Open".
 * Enter your NetId, and your password when prompted.
 * Once logged in, navigate to your personal "SCRATCH" directory or the any other subdirecotry where you want to run this workshop.
