@@ -16,7 +16,7 @@ Although the material and the methods are designed to cater for the NYU Abu Dhab
 * Once logged in, navigate to your personal "SCRATCH" directory or the any other subdirecotry where you want to run this workshop.
 
 # MODULE 1 #
-### Dataset ###
+### The dataset ###
 The data that we will use for this hands-on training was obtained from public repository recently published in the Microbiome by **Jeilu et al. 2025** [https://doi.org/10.1186/s40168-025-02276-7]
 Briefly, the study was undertaken for metagenomic profiling of airborne microbial communities from aircraft filters and face masks.
 
@@ -28,6 +28,24 @@ mkdir -p /scratch/$USER/metagenomics_workshop/raw_fastqs/
 cd /scratch/$USER/metagenomics_workshop/
 cp /scratch/gencore/ma5877/metagenomic_course/raw_fastqs/* raw_fastqs/
 
+```
+Now, we will run the QC/QT of the reads. 
+
+```
+kneaddata \
+                -i1 {$self->root_in_dir}/{$sample}_1.fastq \
+                -i2 {$self->root_in_dir}/{$sample}_2.fastq \
+                --reference-db /scratch/Reference_Genomes/Public/Metagenomic/kneaddata_hg39/ \
+                --reference-db /scratch/Reference_Genomes/Public/Metagenomic/kneaddata_phix/ \
+                --trimmomatic-options="SLIDINGWINDOW:4:20" --trimmomatic-options="MINLEN:50" \
+                --run-trim-repetitive \
+                --output {$self->kneaddata_dir}/ \
+                --output-prefix {$sample} \
+                --remove-intermediate-output \
+                --fastqc fastqc \
+                --threads 14 && \
+                fastqc {$self->kneaddata_dir}/{$sample}_paired_1.fastq -t 14 -o {$self->kneaddata_dir}/fastqc/ && \
+                fastqc {$self->kneaddata_dir}/{$sample}_paired_2.fastq -t 14 -o {$self->kneaddata_dir}/fastqc
 ```
 module load all gencore/3
 module load R/4.3.1
