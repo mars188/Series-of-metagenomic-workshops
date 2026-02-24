@@ -69,6 +69,10 @@ kneaddata \
 fastqc {$self->kneaddata_dir}/{$sample}_paired_1.fastq -t 14 -o {$self->kneaddata_dir}/fastqc/ && \
 fastqc {$self->kneaddata_dir}/{$sample}_paired_2.fastq -t 14 -o {$self->kneaddata_dir}/fastqc
 ```
+The results of this run has been shared with you. You should compare the results that you obtain be running the QC/QT with the one ready-made provided to you. Feel free to ask question or discuss if you obtained very different results between these two sets. 
+
+# MODULE 2 #
+
 module load all gencore/3
 module load R/4.3.1
 module load biopython/1.85
