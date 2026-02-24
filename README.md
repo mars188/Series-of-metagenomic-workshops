@@ -33,19 +33,19 @@ Now, we will run the QC/QT of the reads.
 
 ```
 kneaddata \
-                -i1 {$self->root_in_dir}/{$sample}_1.fastq \
-                -i2 {$self->root_in_dir}/{$sample}_2.fastq \
-                --reference-db /scratch/Reference_Genomes/Public/Metagenomic/kneaddata_hg39/ \
-                --reference-db /scratch/Reference_Genomes/Public/Metagenomic/kneaddata_phix/ \
-                --trimmomatic-options="SLIDINGWINDOW:4:20" --trimmomatic-options="MINLEN:50" \
-                --run-trim-repetitive \
-                --output {$self->kneaddata_dir}/ \
-                --output-prefix {$sample} \
-                --remove-intermediate-output \
-                --fastqc fastqc \
-                --threads 14 && \
-                fastqc {$self->kneaddata_dir}/{$sample}_paired_1.fastq -t 14 -o {$self->kneaddata_dir}/fastqc/ && \
-                fastqc {$self->kneaddata_dir}/{$sample}_paired_2.fastq -t 14 -o {$self->kneaddata_dir}/fastqc
+-i1 {$self->root_in_dir}/{$sample}_1.fastq \
+-i2 {$self->root_in_dir}/{$sample}_2.fastq \
+--reference-db /scratch/Reference_Genomes/Public/Metagenomic/kneaddata_hg39/ \
+--reference-db /scratch/Reference_Genomes/Public/Metagenomic/kneaddata_phix/ \
+--trimmomatic-options="SLIDINGWINDOW:4:20" --trimmomatic-options="MINLEN:50" \
+--run-trim-repetitive \
+--output {$self->kneaddata_dir}/ \
+--output-prefix {$sample} \
+--remove-intermediate-output \
+--fastqc fastqc \
+--threads 14 && \
+fastqc {$self->kneaddata_dir}/{$sample}_paired_1.fastq -t 14 -o {$self->kneaddata_dir}/fastqc/ && \
+fastqc {$self->kneaddata_dir}/{$sample}_paired_2.fastq -t 14 -o {$self->kneaddata_dir}/fastqc
 ```
 module load all gencore/3
 module load R/4.3.1
