@@ -18,7 +18,11 @@ Although the material and the methods are designed to cater for the NYU Abu Dhab
 # MODULE 1 #
 ### The dataset ###
 The data that we will use for this hands-on training was obtained from public repository recently published in the Microbiome by **Jeilu et al. 2025** [https://doi.org/10.1186/s40168-025-02276-7]
-Briefly, the study was undertaken for metagenomic profiling of airborne microbial communities from aircraft filters and face masks.
+Briefly, the study was undertaken for metagenomic profiling of airborne microbial communities from aircraft filters and face masks. This study compared the following four groups. 
+` - Aircraft filter
+` - Hospital
+` - Travel 
+` - Control (unworn)
 
 We will be using the NYUAD High Performance Computing (HPC) cluster for this workshop, however, you can certainly run all of the analysis on any stand alone machine (server, personal laptop/Desktop etc.) provided that you have pre-installed the necessay software packages.
 
