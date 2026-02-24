@@ -29,7 +29,17 @@ cd /scratch/$USER/metagenomics_workshop/
 cp /scratch/gencore/ma5877/metagenomic_course/raw_fastqs/* raw_fastqs/
 
 ```
-Now, we will run the QC/QT of the reads. 
+Now, we will run the QC/QT of the reads. There are several tools available for this purpose including metawrap, bbtools etc but we will be using **KneadData** that is part of the Biobakery suite. 
+
+So, we need to load kneaddata module as below. 
+
+```
+module purge
+module load all
+module load gencore/3
+module load kneaddata/0.12.4
+```
+Now, if we run ``` kneaddata --help ``` command, it pulls a detailed menu of this program and we can see all the available options that we can use.  
 
 ```
 kneaddata \
