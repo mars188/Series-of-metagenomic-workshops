@@ -41,7 +41,7 @@ cp /scratch/gencore/ma5877/metagenomic_course/raw_fastqs/* raw_fastqs/
 
 ```
 Now, we will run the QC/QT of the reads. 
-Basically, we will check the quality of reads first then perform quality trimming to remove low quality reads, adapter sequences and finally also decontaminate the reads meaning that we will remove host (human) sequences. At the end, this step will produce clean, high quality reads free from host contamination for the downstream analysis. There are several tools available for this purpose including metawrap, bbtools etc but we will be using **KneadData** that is part of the Biobakery suite. 
+Basically, we will check the quality of reads first then perform quality trimming to remove low quality reads, adapter sequences and finally also decontaminate the reads meaning that we will remove host (human) sequences. At the end, this step will produce clean, high quality reads free from host contamination for the downstream analysis. There are several tools available for this purpose including metawrap, bbtools etc but we will be using **KneadData** that is part of the Biobakery suite [https://github.com/biobakery/kneaddata]. 
 
 So, we need to load **KneadData** module as below. 
 
