@@ -39,7 +39,7 @@ module load all
 module load gencore/3
 module load kneaddata/0.12.4
 ```
-Now, if we run ``` kneaddata --help ``` command, it pulls a detailed menu of this program and we can see all the available options that we can use.  
+Now, if we run ``` kneaddata --help ``` command, it pulls a detailed menu of this program and we can see all the available options that we can use. Please run this help command and try to find which option should go in the provided blanks.   
 
 ```
 kneaddata \
