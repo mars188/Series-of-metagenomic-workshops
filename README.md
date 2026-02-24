@@ -28,8 +28,8 @@ Briefly, the study was undertaken for metagenomic profiling of airborne microbia
 
 For the sake of time and resources, we will be using the following two groups in this workshop to analyze the microbial profiling using this dataset. 
 
-**Aircraft filter**
-**Control** 
+- Aircraft filter
+- Control
 
 We will be using the NYUAD High Performance Computing (HPC) cluster for this workshop, however, you can certainly run all of the analysis on any stand alone machine (server, personal laptop/Desktop etc.) provided that you have pre-installed the necessay software packages.
 
