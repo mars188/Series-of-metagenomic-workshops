@@ -17,7 +17,8 @@ Although the material and the methods are designed to cater for the NYU Abu Dhab
 
 # MODULE 1 #
 ### The dataset ###
-The data that we will use for this hands-on training was obtained from public repository recently published in the Microbiome by **Jeilu et al. 2025** [https://doi.org/10.1186/s40168-025-02276-7]
+The shotgun metagenomic sequencing data that we will use for this hands-on training was obtained from a recently published study in the Microbiome by **Jeilu et al. 2025** [https://doi.org/10.1186/s40168-025-02276-7]. The authors deposited the data in the NCBI under the BioProject accession number PRJNA1228129.
+
 Briefly, the study was undertaken for metagenomic profiling of airborne microbial communities from aircraft filters and face masks. This study compared the following four groups. 
 
 - Aircraft filter (aircraft cabin filter was removed from a commercial airplane after 8039 h of usage)
@@ -26,8 +27,9 @@ Briefly, the study was undertaken for metagenomic profiling of airborne microbia
 - Control (Unworn)
 
 For the sake of time and resources, we will be using the following two groups in this workshop to analyze the microbial profiling using this dataset. 
-**- Aircraft filter**
-**- Control** 
+
+**Aircraft filter**
+**Control** 
 
 We will be using the NYUAD High Performance Computing (HPC) cluster for this workshop, however, you can certainly run all of the analysis on any stand alone machine (server, personal laptop/Desktop etc.) provided that you have pre-installed the necessay software packages.
 
