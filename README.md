@@ -37,7 +37,7 @@ We will be using the NYUAD High Performance Computing (HPC) cluster for this wor
 mkdir -p /scratch/$USER/metagenomics/
 mkdir -p /scratch/$USER/metagenomics/raw_fastqs/
 cd /scratch/$USER/metagenomics/
-cp /scratch/gencore/metagenomics/ .
+cp /scratch/gencore/metagenomics/* .
 
 ```
 Now, we will run the QC/QT of the reads. 
