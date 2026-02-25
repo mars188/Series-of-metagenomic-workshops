@@ -126,3 +126,19 @@ Rscript -e 'args<-commandArgs(trailingOnly=TRUE); infile<-args[1]; outfile<-args
 Rscript -e 'library(vegan); mat<-as.matrix(read.table("cleaned_beta_matrix.txt", header=TRUE, check.names=FALSE, row.names=1)); d<-as.dist(mat); p<-cmdscale(d, k=2, eig=TRUE); scores<-as.data.frame(p$points); scores$Sample<-rownames(scores); scores$Group<-ifelse(grepl("^AF", scores$Sample), "AirFilter", ifelse(grepl("^C", scores$Sample), "Control", "Other")); ad<-adonis2(d ~ Group, data=scores); pval<-ad$`Pr(>F)`[1]; var_expl<-round(p$eig/sum(p$eig)*100,1); png("beta_pcoa.png", width=800, height=600, res=120); par(mar=c(5,5,4,2)); cols<-c(AirFilter="steelblue", Control="orange", Other="gray"); plot(scores$V1, scores$V2, xlab=paste0("PCoA1 (", var_expl[1], "%)"), ylab=paste0("PCoA2 (", var_expl[2], "%)"), pch=16, col=cols[scores$Group], main="PCoA of beta diversity"); legend("topright", legend=unique(scores$Group), col=cols[unique(scores$Group)], pch=16, bty="n"); text(x=min(scores$V1), y=max(scores$V2), labels=paste0("PERMANOVA p = ", signif(pval,3)), adj=c(0,1)); dev.off()'
 ```
 
+```
+module purge && \
+module load all gencore/3 && \
+module load bracken/3.1 && \
+bracken -d /scratch/Reference_Genomes/Public/Metagenomic/kraken2/bacteria \
+-i {$self->kraken2_dir}/{$sample}_profile.txt \
+-o {$self->bracken_dir}/{$sample}_S.txt \
+-r 100 -l S -t 10 > {$self->bracken_dir}/{$sample}_log.txt
+```
+
+```
+module purge && \
+module load all gencore/3 && \
+module load bracken/3.1 && \
+(echo -e "Sample\tDiversity"; awk 'FNR==1{f=FILENAME; sub(/^.*\//,"",f); sub("_S_Sh.txt","",f)} /Shannon/{print f"\t"$NF}' data/analysis/*/bracken/*_S_Sh.txt) > {$self->root_out_dir}/../diversity_plots/merged_alpha_div.txt
+```
