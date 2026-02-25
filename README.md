@@ -108,12 +108,12 @@ module load R/4.3.1
 module load biopython/1.85
 python \
 /scratch/Reference_Genomes/Public/Metagenomic/KrakenTools/DiversityTools/alpha_diversity.py \
--f {$self->root_out_dir}/{$sample}/bracken/{$sample}_S.txt \
-> {$self->root_out_dir}/{$sample}/bracken/{$sample}_S_Sh.txt && \
+-f analysis/bracken/AF1_S.txt \
+> analysis/diversity/AF1_Sh.txt && \
 python \
 /scratch/Reference_Genomes/Public/Metagenomic/KrakenTools/DiversityTools/beta_diversity.py \
--i {$self->root_out_dir}/*/kraken2/*_profile.txt --type kreport2 -l S \
-> {$self->root_out_dir}/../diversity_plots/merged_beta_div.txt
+-i analysis/kraken2/AF1_profile.txt --type kreport2 -l S \
+> analysis/diveristy/ot_out_dir}/../diversity_plots/merged_beta_div.txt
 
 mkdir -p diversity_plots/
 cd diversity_plots/
