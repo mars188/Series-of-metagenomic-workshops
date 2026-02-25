@@ -34,10 +34,10 @@ For the sake of time and resources, we will be using the following two groups in
 We will be using the NYUAD High Performance Computing (HPC) cluster for this workshop, however, you can certainly run all of the analysis on any stand alone machine (server, personal laptop/Desktop etc.) provided that you have pre-installed the necessay software packages.
 
 ```
-mkdir -p /scratch/$USER/metagenomics_workshop/
-mkdir -p /scratch/$USER/metagenomics_workshop/raw_fastqs/
-cd /scratch/$USER/metagenomics_workshop/
-cp /scratch/gencore/ma5877/metagenomic_course/raw_fastqs/* raw_fastqs/
+mkdir -p /scratch/$USER/metagenomics/
+mkdir -p /scratch/$USER/metagenomics/raw_fastqs/
+cd /scratch/$USER/metagenomics/
+cp /scratch/gencore/metagenomics/ .
 
 ```
 Now, we will run the QC/QT of the reads. 
