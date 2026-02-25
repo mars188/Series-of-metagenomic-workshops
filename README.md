@@ -88,6 +88,17 @@ k2 classify \
 --report-zero-counts \
 --paired analysis/kneaddata/AF1_paired_1.fastq analysis/kneaddata/AF1_paired_2.fastq
 ```
+
+```
+module purge && \
+module load all gencore/3 && \
+module load bracken/3.1 && \
+bracken -d /scratch/Reference_Genomes/Public/Metagenomic/kraken2/bacteria \
+-i analysis/kraken2/AF1_profile.txt \
+-o analysis/bracken/AF1_S.txt \
+-r 100 -l S -t 10 > analysis/bracken/AF1_log.txt
+```
+
 ### Diversity ###
 ```
 module load all gencore/3
