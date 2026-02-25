@@ -81,9 +81,9 @@ k2 classify \
 --db /scratch/Reference_Genomes/Public/Metagenomic/kraken2/bacteria \
 --threads 28 \
 --confidence 0.1 \
---output {$self->kraken2_dir}/{$sample}.kraken \
---unclassified-out {$self->kraken2_dir}/{$sample}_unbact#.fastq \
---report {$self->kraken2_dir}/{$sample}_profile.txt --report-zero-counts \
+--output kraken2/sample.kraken \
+--unclassified-out kraken2/$sample_unbact#.fastq \
+--report kraken2/{$sample}_profile.txt --report-zero-counts \
 --paired {$self->TR1} {$self->TR2}
 ```
 ### Diversity ###
@@ -91,6 +91,14 @@ k2 classify \
 module load all gencore/3
 module load R/4.3.1
 module load biopython/1.85
+python \
+/scratch/Reference_Genomes/Public/Metagenomic/KrakenTools/DiversityTools/alpha_diversity.py \
+-f {$self->root_out_dir}/{$sample}/bracken/{$sample}_S.txt \
+> {$self->root_out_dir}/{$sample}/bracken/{$sample}_S_Sh.txt && \
+python \
+/scratch/Reference_Genomes/Public/Metagenomic/KrakenTools/DiversityTools/beta_diversity.py \
+-i {$self->root_out_dir}/*/kraken2/*_profile.txt --type kreport2 -l S \
+> {$self->root_out_dir}/../diversity_plots/merged_beta_div.txt
 
 mkdir -p diversity_plots/
 cd diversity_plots/
