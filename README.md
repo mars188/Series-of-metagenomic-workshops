@@ -109,20 +109,21 @@ module load biopython/1.85
 python \
 /scratch/Reference_Genomes/Public/Metagenomic/KrakenTools/DiversityTools/alpha_diversity.py \
 -f analysis/bracken/AF1_S.txt \
-> analysis/diversity/AF1_Sh.txt && \
+-a Sh \
+> analysis/alpha_diversity/AF1_Sh.txt && \
 python \
 /scratch/Reference_Genomes/Public/Metagenomic/KrakenTools/DiversityTools/beta_diversity.py \
--i analysis/kraken2/AF1_profile.txt --type kreport2 -l S \
-> analysis/diveristy/ot_out_dir}/../diversity_plots/merged_beta_div.txt
+-i analysis/kraken2/*profile.txt --type kreport2 -l S \
+> analysis/beta_diveristy/merged_beta_div.txt
 
 mkdir -p diversity_plots/
 cd diversity_plots/
-cp ../data/analysis/*/kraken2/*_profile.txt .
-cp ../data/analysis/*/bracken/*_S_Sh.txt .
+cp analysis/kraken2/*_profile.txt .
+cp analysis/bracken/*_Sh.txt .
 python /scratch/Reference_Genomes/Public/Metagenomic/KrakenTools/DiversityTools/beta_diversity.py -i *_profile.txt --type kreport2 -l S > merged_beta_div.txt
-(echo -e "Sample\tDiversity"; awk 'FNR==1{f=FILENAME; sub(/^.*\//,"",f); sub("_S_Sh.txt","",f)} /Shannon/{print f"\t"$NF}' *_S_Sh.txt) > merged_alpha_div.txt
+(echo -e "Sample\tDiversity"; awk 'FNR==1{f=FILENAME; sub(/^.*\//,"",f); sub("_Sh.txt","",f)} /Shannon/{print f"\t"$NF}' *_Sh.txt) > merged_alpha_div.txt
 rm *_profile.txt
-rm *_S_Sh.txt
+rm *_Sh.txt
 
 Rscript -e 'df<-read.table("merged_alpha_div.txt",header=TRUE,stringsAsFactors=FALSE); df$Group<-ifelse(grepl("^AF",df$Sample),"Filter",ifelse(grepl("^C",df$Sample),"Control","Other")); write.table(df,"merged_alpha_div_with_group.txt",sep="\t",quote=FALSE,row.names=FALSE)'
 
