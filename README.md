@@ -75,16 +75,18 @@ The results of this run has been shared with you. You should compare the results
 
 ```
 module purge && \
-module load all gencore/3 && \
+module load all && \
+module load gencore/3 && \
 module load kraken2/2.17.1 && \
 k2 classify \
 --db /scratch/Reference_Genomes/Public/Metagenomic/kraken2/bacteria \
---threads 28 \
+--threads 14 \
 --confidence 0.1 \
---output kraken2/sample.kraken \
---unclassified-out kraken2/$sample_unbact#.fastq \
---report kraken2/{$sample}_profile.txt --report-zero-counts \
---paired {$self->TR1} {$self->TR2}
+--output analysis/kraken2/AF1.kraken \
+--unclassified-out analysis/kraken2/AF1_unbact#.fastq \
+--report analysis/kraken2/AF1_profile.txt \
+--report-zero-counts \
+--paired analysis/kneaddata/AF1_paired_1.fastq analysis/kneaddata/AF1_paired_2.fastq
 ```
 ### Diversity ###
 ```
