@@ -55,19 +55,19 @@ Now, if we run ``` kneaddata --help ``` command, it pulls a detailed menu of thi
 
 ```
 kneaddata \
--i1 {$self->root_in_dir}/{$sample}_1.fastq \
--i2 {$self->root_in_dir}/{$sample}_2.fastq \
+-i1 raw_fastqs/AF1_1.fastq \
+-i2 raw_fastqs/AF1_2.fastq \
 --reference-db /scratch/Reference_Genomes/Public/Metagenomic/kneaddata_hg39/ \
 --reference-db /scratch/Reference_Genomes/Public/Metagenomic/kneaddata_phix/ \
 --trimmomatic-options="SLIDINGWINDOW:4:20" --trimmomatic-options="MINLEN:50" \
 --run-trim-repetitive \
---output {$self->kneaddata_dir}/ \
---output-prefix {$sample} \
+--output analysis/kneaddata/ \
+--output-prefix AF1 \
 --remove-intermediate-output \
 --fastqc fastqc \
---threads 14 && \
-fastqc {$self->kneaddata_dir}/{$sample}_paired_1.fastq -t 14 -o {$self->kneaddata_dir}/fastqc/ && \
-fastqc {$self->kneaddata_dir}/{$sample}_paired_2.fastq -t 14 -o {$self->kneaddata_dir}/fastqc
+--threads 14
+fastqc analysis/kneaddata/AF1_paired_1.fastq -t 14 -o analysis/kneaddata/fastqc
+fastqc analysis/kneaddata/AF1_paired_2.fastq -t 14 -o analysis/kneaddata/fastqc
 ```
 The results of this run has been shared with you. You should compare the results that you obtain be running the QC/QT with the one ready-made provided to you. Feel free to ask question or discuss if you obtained very different results between these two sets. 
 
