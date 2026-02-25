@@ -78,6 +78,7 @@ module purge && \
 module load all && \
 module load gencore/3 && \
 module load kraken2/2.17.1 && \
+
 k2 classify \
 --db /scratch/Reference_Genomes/Public/Metagenomic/kraken2/bacteria \
 --threads 14 \
@@ -93,6 +94,7 @@ k2 classify \
 module purge && \
 module load all gencore/3 && \
 module load bracken/3.1 && \
+
 bracken -d /scratch/Reference_Genomes/Public/Metagenomic/kraken2/bacteria \
 -i analysis/kraken2/AF1_profile.txt \
 -o analysis/bracken/AF1_S.txt \
